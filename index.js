@@ -17,8 +17,13 @@ async function main() {
 //index route
 app.get("/chats", async (req,res)=>{
     let chats = await Chat.find();
-    console.log(chats);
+    //console.log(chats);
     res.render("index.ejs", {chats});
+});
+
+//new route
+app.get("/chats/new", (req,res)=>{
+    res.render("new.ejs");
 });
 
 // let chat1 = new Chat({
